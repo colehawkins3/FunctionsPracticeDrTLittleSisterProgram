@@ -18,9 +18,13 @@ using namespace std;
 
 //$_earned       mom  dad
 double MakeBank(bool,bool); //function prototype
+void WelcomeMessage();
+void dayOfTheWeek(int);
 
 int main()
 {
+    int dayInput = 0; //accept day input
+    WelcomeMessage();//function call, has to be on line of it's own
     //function calls (true = "yes", false="no"
     cout << "\nLittle Sister Function calls: ";
     cout << "\nOption 1, Little Sister Earns: $" << MakeBank(true,false);
@@ -37,6 +41,10 @@ int main()
       6. Extend this program set the precision of the numberCube result to 4 decimal places
       7. Loop the program until exit conditions 'E' AND 'e', clear the screen upon each loop #include<cstdlib> system("cls");
     */
+    cout << "\nPlease enter a day of the week (1-7): ";
+    cin >> dayInput; //accept input of day
+    dayOfTheWeek(dayInput); //pass argument provided by user
+
     return 0;
 }
 
@@ -44,8 +52,61 @@ double MakeBank(bool mom, bool dad)
 {
 	double amtEarned = 0.0; //what sister can get from parents
 	//handle each scenario How much does Little Sister earn $20 increments.
+  if(mom == true)
+  {
+    amtEarned += 20.0;
+  }
+  if(dad == true)
+  {
+    amtEarned += 20.0;
+  }
+if(mom == false)
+{
+  amtEarned += 0.0;
+  cout << "\n\t Ain't!! " << endl;
+}
 
 	return amtEarned;
 }
 
+void WelcomeMessage()
+  {
+    cout << "\nLet's get this bread!" << endl;
+    for(int i = 1; i < 25; i++)
+    {
+      cout << "<>";
+    }
+    cout << endl;
+  }
+  void dayOfTheWeek(int day)
+  {
+  if(day == 1)
+  {
+  cout << "\u001b[31mToday is Sunday!" << endl;
+  }
+  else if(day == 2)
+  {
+    cout << "\u001b[32mToday is Monday!" << endl;
+  }
+  else if(day == 3)
+  {
+    cout << "\u001b[33mToday is Tuesday!" << endl;
+  }
+  else if(day == 4)
+  {
+    cout << "\u001b[34mToday is Wednesday!" << endl;
+  }
+   else if(day == 5)
+  {
+    cout << "\u001b[35mToday is Thursday!" << endl;
+  }
+   else if(day == 6)
+  {
+    cout << "\u001b[36mToday is Friday!" << endl;
+  }
+   else if(day == 7)
+  {
+    cout << "\u001b[37mToday is Saturday!" << endl;
+  }
+  }
 
